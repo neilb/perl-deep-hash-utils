@@ -1,5 +1,6 @@
 package Deep::Hash::Utils;
 
+use 5.006;
 use strict;
 use warnings;
 

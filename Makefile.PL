@@ -25,4 +25,10 @@ WriteMakefile(
             },
           })
     ),
+
+    ($mm_ver >= 6.48
+        ? (MIN_PERL_VERSION => 5.006)
+        : ()
+    ),
+
 );

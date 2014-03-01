@@ -9,7 +9,7 @@ our @ISA = qw(Exporter);
 our %EXPORT_TAGS = ( 'all' => [ qw( reach slurp nest deepvalue ) ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = ();
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 
 my $C;
@@ -127,12 +127,11 @@ sub deepvalue {
 __END__
 
 
-=head1 Deep::Hash::Utils
+=head1 NAME
 
-Functions for iterating over, accessing, and modifying nested hashes
+Deep::Hash::Utils - functions for iterating over and working with nested hashes
 
 =head1 SYNOPSIS
-
 
 	use Deep::Hash::Utils qw(reach slurp nest deepvalue);
 	

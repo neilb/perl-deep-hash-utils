@@ -301,6 +301,9 @@ retrieve deeply nested values with a list of keys:
 
 None by default.
 
+=head1 REPOSITORY
+
+L<https://github.com/clbecker/perl-deep-hash-utils>
 
 =head1 AUTHOR
 

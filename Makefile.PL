@@ -9,7 +9,11 @@ if ($mm_ver =~ /_/) { # dev version
 WriteMakefile(
     NAME              => 'Deep::Hash::Utils',
     VERSION_FROM      => 'lib/Deep/Hash/Utils.pm',
-    PREREQ_PM         => {},
+    PREREQ_PM         => {
+        'Exporter'  => 0,
+        'strict'    => 0,
+        'warnings'  => 0,
+    },
 
     ($mm_ver <= 6.45
         ? ()
@@ -23,6 +27,20 @@ WriteMakefile(
                 },
             },
           })
+    ),
+
+    ($mm_ver >= 6.52
+        ? (CONFIGURE_REQUIRES => {
+                'ExtUtils::MakeMaker' => 6.30,
+          })
+        : ()
+    ),
+
+    ($mm_ver >= 6.64
+        ? (TEST_REQUIRES => {
+                'Test::More' => 0.88,
+          })
+        : ()
     ),
 
     ($mm_ver >= 6.31

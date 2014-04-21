@@ -6,6 +6,7 @@ Revision history for Perl module Deep::Hash::Utils
     - Added github repo to metadata and doc
     - Specified license type as 'perl_5' in metadata
     - Added simple test for reach() in t/01-reach.t
+    - Added PREREQ_PM, TEST_REQUIRES and CONFIGURE_REQUIRES
 
 0.02 2012-07-06
     - Fixes in README

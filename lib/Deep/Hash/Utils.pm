@@ -304,7 +304,7 @@ None by default.
 
 =head1 REPOSITORY
 
-L<https://github.com/clbecker/perl-deep-hash-utils>
+L<https://github.com/neilbowers/perl-deep-hash-utils>
 
 =head1 AUTHOR
 

@@ -10,7 +10,7 @@ our @ISA = qw(Exporter);
 our %EXPORT_TAGS = ( 'all' => [ qw( reach slurp nest deepvalue ) ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = ();
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 
 my $C;
@@ -169,7 +169,7 @@ Deep::Hash::Utils - functions for iterating over and working with nested hashes
 
 =head1 DESCRIPTION
 
-This module provides functions for accessing and modifying values in deeply nested data structures
+This module provides functions for accessing and modifying values in deeply nested data structures.
 
 
 =head3 C<reach> 
@@ -309,6 +309,8 @@ L<https://github.com/neilbowers/perl-deep-hash-utils>
 =head1 AUTHOR
 
 Chris Becker, E<lt>clbecker@gmail.com<gt>
+
+Now maintained by Neil Bowers E<lt>neilb@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 

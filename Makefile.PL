@@ -22,8 +22,8 @@ WriteMakefile(
             resources => {
                 repository  => {
                     type => 'git',
-                    web  => 'https://github.com/neilbowers/perl-deep-hash-utils',
-                    url  => 'git://github.com/neilbowers/perl-deep-hash-utils.git',
+                    web  => 'https://github.com/neilb/perl-deep-hash-utils',
+                    url  => 'git://github.com/neilb/perl-deep-hash-utils.git',
                 },
             },
           })

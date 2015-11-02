@@ -33,7 +33,7 @@ sub reach {
 					}
 					return @rec;
 				} 
-				
+
 			}
 			undef $C->{$ref};
 		} 
@@ -54,7 +54,7 @@ sub reach {
 		if (defined $C->{$ref}{v}) {
 			if (ref $C->{$ref}{v} eq 'HASH' || 
 			    ref $C->{$ref}{v} eq 'ARRAY') {
-				
+
 				if (my @rec = reach($C->{$ref}{v})) {
 					if (defined $C->{$ref}{k}) {
 						return $C->{$ref}{k},@rec;
@@ -135,7 +135,7 @@ Deep::Hash::Utils - functions for iterating over and working with nested hashes
 =head1 SYNOPSIS
 
 	use Deep::Hash::Utils qw(reach slurp nest deepvalue);
-	
+
 	my %hash = (
 		  A => {
 			   B => {
@@ -148,7 +148,7 @@ Deep::Hash::Utils - functions for iterating over and working with nested hashes
 				   },
 			  }
 		 );
-	
+
 	while (my @list = reach(\%hash)) {
 		print "@list";
 	}
@@ -156,13 +156,11 @@ Deep::Hash::Utils - functions for iterating over and working with nested hashes
 	for my $a (sort {$a->[2] cmp $b->[2]} slurp(\%hash)) {
 		print "@$a";
 	}
-	
-	
-	
+
 	my %new_hash = ();
-	
+
 	nest(\%new_hash,1,2,3,4,5);
-	
+
 	my $value = deepvalue(\%new_hash,1,2,3,4);
 
 
@@ -172,7 +170,7 @@ Deep::Hash::Utils - functions for iterating over and working with nested hashes
 This module provides functions for accessing and modifying values in deeply nested data structures.
 
 
-=head3 C<reach> 
+=head2 C<reach> 
 
 reach HASHREF
 
@@ -186,7 +184,7 @@ The reference passed to C<reach> can contain any combination of nested hashes an
 
 	use Deep::Hash::Utils qw(reach slurp nest);
 	$\ = "\n";
-	
+
 	my %hash = (
 		A => {
 			B => {
@@ -199,15 +197,15 @@ The reference passed to C<reach> can contain any combination of nested hashes an
 				},
 			}
 		);
-	
+
 	while (my @list = reach(\%hash)) {
 		print "@list";
 	}
-	
+
 	__END__
-	
+
 	Outputs: 
-	
+
 	A C Z 4
 	A C Y 3
 	A B W 1
@@ -215,7 +213,7 @@ The reference passed to C<reach> can contain any combination of nested hashes an
 
 
 
-=head3 C<slurp> 
+=head2 C<slurp> 
 
 slurp HASHREF
 
@@ -225,11 +223,11 @@ Use this if you want the same result of C<reach> with the ability to sort each l
 	for my $a (sort {$a->[2] cmp $b->[2]} slurp(\%hash)) {
 		print "@$a";
 	}
-	
+
 	__END__
-	
+
 	Output: 
-	
+
 	A B W 1
 	A B X 2
 	A C Y 3
@@ -237,23 +235,23 @@ Use this if you want the same result of C<reach> with the ability to sort each l
 
 
 
-=head3 C<nest> 
+=head2 C<nest> 
 
 nest HASHREF, LIST
 
 define nested hash keys with a given list
 
 	use Data::Dumper;
-	
+
 	my %new_hash = ();
 	nest(\%new_hash,1,2,3,4,5);
-	
+
 	print Dumper \%new_hash;
-	
+
 	__END__
-	
+
 	Output: 
-	
+
 	$VAR1 = {
 	          '1' => {
 	                   '2' => {
@@ -265,7 +263,7 @@ define nested hash keys with a given list
 	        };
 
 
-=head3 C<deepvalue> 
+=head2 C<deepvalue> 
 
 deepvalue HASHREF, LIST
 
@@ -280,17 +278,17 @@ retrieve deeply nested values with a list of keys:
 	                          }
 	                 }
 	        );
-	
+
 	print Dumper deepvalue(\%new_hash,1,2,3,4);
-	
+
 	print Dumper deepvalue(\%new_hash,1,2);
-	
+
 	__END__
-	
+
 	Output: 
-	
+
 	$VAR1 = 5;
-	
+
 	$VAR1 = {
 	          '3' => {
 	                   '4' => 5
